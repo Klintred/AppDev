@@ -10,10 +10,7 @@ const DetailScreen = ({ route, navigation }) => {
   return (
     <View style={styles.screen}>
       <ProductDetail productId={id} />
-      <Button
-        title="Back to Products"
-        onPress={() => navigation.navigate('Products')}
-      />
+      
     </View>
   );
 };

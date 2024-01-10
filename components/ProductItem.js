@@ -1,27 +1,29 @@
 // components/ProductItem.js
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image, Button } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 
 const ProductItem = props => {
+  const { id, title, price, productImage, onSelectProduct, onAddToFavorites } = props;
+
   return (
-    <TouchableOpacity activeOpacity={0.5} onPress={() => props.onSelectProduct(props.id)}>
+    <TouchableOpacity activeOpacity={0.5} onPress={() => onSelectProduct(id)}>
       <View style={styles.productItem}>
         <Image
           style={styles.banner}
           source={{
-            uri: props.productImage,
+            uri: productImage,
           }}
         />
-        <Text style={styles.title}>{props.title}</Text>
-        <Text style={styles.price}>€ {props.price}</Text>
-        
+        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.price}>€ {price}</Text>
+
         {/* Add to Cart button */}
-        <TouchableOpacity style={styles.buttonone} >
+        <TouchableOpacity style={styles.buttonone}>
           <Text style={styles.buttonTextone}>Add to Cart</Text>
         </TouchableOpacity>
 
         {/* Add to Favorites button */}
-        <TouchableOpacity style={styles.buttontwo} >
+        <TouchableOpacity style={styles.buttontwo} onPress={() => onAddToFavorites(id, title, price, productImage)}>
           <Text style={styles.buttonTexttwo}>Add to Favorites</Text>
         </TouchableOpacity>
       </View>
@@ -30,7 +32,8 @@ const ProductItem = props => {
 };
 
 const styles = StyleSheet.create({
-  
+  // ... (existing styles)
+
   buttonone: {
     backgroundColor: '#fddf93',
     padding: 10,
@@ -39,7 +42,7 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginRight: 10,
   },
-  
+
   buttonTextone: {
     color: 'black',
     textAlign: 'center',
@@ -50,7 +53,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#FDF7E4',
     padding: 10,
     borderRadius: 5,
-    
     marginTop: 5,
   },
   buttonTexttwo: {
@@ -58,26 +60,25 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     borderWidth: 2,
     padding: 10,
-    borderRadius:4,
+    borderRadius: 4,
     fontWeight: 'bold',
-    borderColor: "#ccc",
+    borderColor: '#ccc',
   },
 
   productItem: {
     padding: 12,
     marginVertical: 8,
-    backgroundColor: "#FDF7E4",
+    backgroundColor: '#FDF7E4',
     borderRadius: 20,
     borderWidth: 3,
-    borderColor: "#ccc",
-   
+    borderColor: '#ccc',
   },
   banner: {
     height: 200,
     borderRadius: 8,
   },
   title: {
-    color: "#000000",
+    color: '#000000',
     fontSize: 26,
     marginTop: 12,
     marginBottom: 12,
@@ -85,14 +86,6 @@ const styles = StyleSheet.create({
   price: {
     marginBottom: 8,
   },
-  buttonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginTop: 8,
-  },
-  
-  
-  
 });
 
 export default ProductItem;
