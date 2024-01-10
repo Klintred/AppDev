@@ -1,94 +1,52 @@
-// screens/AboutScreen.js
+// Importeren van vereiste modules en componenten
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
+// AboutScreen component dat informatie weergeeft over Toby's verhaal en doelen
 const AboutScreen = () => {
+  // Renderen van het AboutScreen component
   return (
     <View style={styles.container}>
-     
-    
+      {/* Weergeven van de kop en tekst over Toby's verhaal */}
       <Text style={styles.headerone}>Toby's story</Text>
       <Text style={styles.text}>
-        Hi, I'm Toby, at least thats how people call me here. I'm a Japanese couch designer 
-        that hopes to bring joy to the people. Because of my name being a mouthful, everyone just calls 
-        me Toby here. 
-        
+        Hi, I'm Toby, at least that's how people call me here. I'm a Japanese couch designer 
+        that hopes to bring joy to the people. Because my name is a mouthful, everyone just calls 
+        me Toby here.
       </Text>
       <Text style={styles.text}>
-      At Toby's everyone is focused on giving the people the best quality and aestheticly pleasing couches to comfort you 
-        and your family.
+        At Toby's, everyone is focused on giving people the best quality and aesthetically pleasing couches to comfort 
+        you and your family.
       </Text>
     </View>
   );
 };
 
+// Stijlen voor het AboutScreen component
 const styles = StyleSheet.create({
-    
+  // Containerstijlen voor het scherm
   container: {
     flex: 1,
-  
     alignItems: 'center',
     backgroundColor: '#FDF7E4',
     padding: 20,
   },
+  // Stijlen voor de hoofdkop van het verhaal
   headerone: {
     fontSize: 34,
     fontWeight: 'bold',
     color: '#997950',
     marginBottom: 10,
   },
+  // Stijlen voor de algemene tekst
   text: {
     marginTop: 20,
     fontSize: 16,
     textAlign: 'center',
     color: '#333',
   },
-  Iconone: {
-    marginRight: 10,
-  },
-  Icontwo: {
-    marginRight: 10,
-  },
-  header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    gap: 65,
-    marginBottom: 26,
-  },
-  
-  headerTextone: {
-    flexDirection: 'row',
-    fontSize: 14,
-    borderColor: "black",
-    fontWeight: "bold",
-    marginRight: 26,
-    borderWidth: 1,
-    borderRadius: 8,
-    padding: 10,
-    paddingHorizontal: 20,
-  },
-  headerTexttwo: {
-    flexDirection: 'row',
-    fontSize: 14,
-    borderColor: "#997950",
-    fontWeight: "bold",
-    marginRight: 16,
-    borderWidth: 1,
-    borderRadius: 8,
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-  },
-
-textone:{
-  color: "black",
-},
-
-  texttwo: {
-   marginRight: 4,
-    marginTop: 2,
-    paddingBottom: 2,
-    color: "#997950",
-  },
 });
 
+// Exporteren van het AboutScreen component
 export default AboutScreen;
+

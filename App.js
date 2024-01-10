@@ -10,7 +10,7 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-   
+   // Navigatiecontainer voor het beheren van schermen en navigatie
     <NavigationContainer>
       <Stack.Navigator style="navigator">
         <Stack.Screen name="Products" component={ProductScreen} />
